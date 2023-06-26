@@ -30,11 +30,12 @@ public class ChatFormController implements Initializable {
     private DataInputStream dataInputStream;
     private DataOutputStream dataOutputStream;
 
-    private String userName = "test";
+    private String userName;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        userName = LoginFormController.userName;
         new Thread(() -> {
             try{
                 socket = new Socket("localhost", 1234);
@@ -47,7 +48,7 @@ public class ChatFormController implements Initializable {
                 }
 
             }catch (IOException e){
-                System.out.println(e);
+                closeEverything(socket, dataOutputStream, dataInputStream);
             }
 
         }).start();
@@ -61,8 +62,9 @@ public class ChatFormController implements Initializable {
             dataOutputStream.writeUTF(message);
             dataOutputStream.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            closeEverything(socket, dataOutputStream, dataInputStream);
         }
+        setMessage("Me: " + txtField.getText());
 
 
 //        setMessage(message);
@@ -96,7 +98,21 @@ public class ChatFormController implements Initializable {
         vBoxChat.getChildren().add(textField);
     }
 
-    public void setUserName(String userName){
-        this.userName = userName;
+    private void closeEverything(Socket socket, DataOutputStream dataOutputStream, DataInputStream dataInputStream) {
+        try{
+            if (socket != null){
+                socket.close();
+            }
+
+            if (dataInputStream != null){
+                dataInputStream.close();
+            }
+
+            if (dataOutputStream != null){
+                dataOutputStream.close();
+            }
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }

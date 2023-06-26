@@ -17,20 +17,22 @@ public class LoginFormController {
     @FXML
     private JFXTextField txtUserName;
 
+    public static String userName;
+
     @FXML
     void btnGoToChatOnAction(ActionEvent event) {
+        userName = txtUserName.getText();
 
         try {
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/chat_form.fxml"));
             root.getChildren().setAll((Node)fxmlLoader.load());
 
-            ChatFormController controller = fxmlLoader.getController();
-            controller.setUserName(txtUserName.getText());
-
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        userName = null;
 
     }
 

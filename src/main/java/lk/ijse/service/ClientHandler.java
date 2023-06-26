@@ -51,7 +51,7 @@ public class ClientHandler implements Runnable{
             try{
                 String user = clientHandler.userName;
                 if (!user.equals(userName)) {
-                    clientHandler.dataOutputStream.writeUTF(user + ": " + message);
+                    clientHandler.dataOutputStream.writeUTF(userName + ": " + message);
                     clientHandler.dataOutputStream.flush();
                 }
             } catch (IOException e){
