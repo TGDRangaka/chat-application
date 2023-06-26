@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane focusTraversable="true" prefHeight="758.0" prefWidth="606.0" style="-fx-background-color: silver;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ChatFormController">
+   <children>
+      <VBox fx:id="vBoxChat" alignment="BOTTOM_LEFT" layoutX="11.0" layoutY="14.0" prefHeight="674.0" prefWidth="584.0" style="-fx-background-color: white; -fx-border-color: black;">
+         <children>
+            <TextField alignment="TOP_LEFT" prefHeight="26.0" prefWidth="582.0" text="Test" />
+         </children></VBox>
+      <HBox alignment="CENTER" layoutX="11.0" layoutY="694.0" prefHeight="58.0" prefWidth="584.0">
+         <children>
+            <JFXTextField fx:id="txtField" focusColor="#405aa800" onAction="#txtFieldOnAction" prefHeight="50.0" prefWidth="486.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 15; -fx-background-radius: 15;" unFocusColor="#4d4d4d00" />
+            <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#btnImageOnAction" prefHeight="49.0" prefWidth="33.0">
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="31.0">
+                     <image>
+                        <Image url="@../img/gallery.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#btnEmojiOnAction" prefHeight="43.0" prefWidth="56.0">
+               <graphic>
+                  <ImageView fitHeight="44.0" fitWidth="43.0">
+                     <image>
+                        <Image url="@../img/icons8-face-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
