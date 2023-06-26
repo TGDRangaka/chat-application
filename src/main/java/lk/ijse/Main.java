@@ -4,24 +4,27 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import lk.ijse.controller.LoginFormController;
+import lk.ijse.controller.CreateLoginFormController;
+import lk.ijse.service.Server;
+
+import java.net.ServerSocket;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Server server = new Server();
-        server.startServer();
+        Server server = new Server(new ServerSocket(1234));
+        Thread thread = new Thread(server);
+        thread.start();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/login_form.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/create_login_form.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
-        LoginFormController loginFormController = fxmlLoader.getController();
-        loginFormController.setServer(server);
-
-        stage.setTitle("Login");
+        stage.setTitle("Login Creater");
         stage.centerOnScreen();
         stage.setScene(scene);
+        stage.setX(1);
+        stage.setY(1);
 
         stage.show();
     }
