@@ -1,6 +1,6 @@
 package lk.ijse.service;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -17,6 +17,7 @@ public class Server implements Runnable{
             try{
 
                     Socket socket = serverSocket.accept();
+
                     System.out.println("A new client has joined to the chat!");
 
                     ClientHandler clientHandler = new ClientHandler(socket);
