@@ -20,6 +20,7 @@ public class CreateLoginFormController {
         Stage stage = new Stage();
         stage.setTitle("Login");
         stage.centerOnScreen();
+        stage.setResizable(false);
         stage.setScene(scene);
 
         stage.show();
