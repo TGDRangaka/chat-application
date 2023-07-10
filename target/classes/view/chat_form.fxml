@@ -6,145 +6,235 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane focusTraversable="true" prefHeight="758.0" prefWidth="606.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ChatFormController">
    <children>
-      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="12.0" layoutY="8.0" prefHeight="687.0" prefWidth="582.0" style="-fx-background-color: transparent;" stylesheets="@../styles/scroll-pane.css" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0">
-         <content>
-            <VBox fx:id="vBoxChat" alignment="BOTTOM_LEFT" prefHeight="677.0" prefWidth="580.0" style="-fx-background-color: linear-gradient(to bottom, #11998e, #38ef7d);">
-               <padding>
-                  <Insets right="10.0" />
-               </padding>
-            </VBox>
-         </content>
-      </ScrollPane>
-      <HBox alignment="CENTER" layoutX="11.0" layoutY="694.0" prefHeight="58.0" prefWidth="584.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="1.0">
+      <GridPane layoutX="43.0" layoutY="65.0" style="-fx-background-color: lightblue;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
-            <JFXTextField fx:id="txtField" focusColor="#405aa800" onAction="#txtFieldOnAction" prefHeight="50.0" prefWidth="486.0" promptText="   Message" style="-fx-background-color: #DAFFFB; -fx-border-color: black; -fx-border-radius: 15; -fx-background-radius: 15;" unFocusColor="#4d4d4d00" />
-            <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#btnImageOnAction" prefHeight="49.0" prefWidth="33.0">
-               <graphic>
-                  <ImageView fitHeight="29.0" fitWidth="31.0">
-                     <image>
-                        <Image url="@../img/gallery.png" />
-                     </image>
-                     <effect>
-                        <ColorAdjust brightness="1.0" contrast="-0.22" hue="0.02" />
-                     </effect>
-                  </ImageView>
-               </graphic>
-               <HBox.margin>
-                  <Insets left="5.0" />
-               </HBox.margin>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#btnEmojiOnAction" prefHeight="43.0" prefWidth="56.0">
-               <graphic>
-                  <ImageView fitHeight="44.0" fitWidth="43.0">
-                     <image>
-                        <Image url="@../img/icons8-face-48.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-         </children>
-      </HBox>
-      <JFXButton fx:id="btnSend" contentDisplay="GRAPHIC_ONLY" layoutX="443.0" layoutY="706.0" prefHeight="34.0" prefWidth="24.0">
-         <graphic>
-            <ImageView>
-               <image>
-                  <Image url="@../../../../../../Second%20Sem/chat-application/src/main/resources/img/paper-plane.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
-      <Pane fx:id="paneCamImgBtns" layoutX="496.0" layoutY="614.0" prefHeight="85.0" prefWidth="49.0" style="-fx-background-color: rgba(255, 255, 255, 0.7); -fx-background-radius: 15px;" visible="false">
-         <children>
-            <VBox alignment="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="85.0" prefWidth="47.0">
+            <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="687.0" prefWidth="582.0" style="-fx-background-color: transparent;" stylesheets="@../styles/scroll-pane.css">
+               <content>
+                  <VBox fx:id="vBoxChat" alignment="BOTTOM_LEFT" prefHeight="701.0" prefWidth="598.0" style="-fx-background-color: linear-gradient(to bottom, #11998e, #38ef7d);">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </VBox>
+               </content>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </ScrollPane>
+            <HBox alignment="CENTER" prefHeight="58.0" prefWidth="584.0" GridPane.rowIndex="1">
                <children>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#btnCameraOnAction" prefHeight="2.0" prefWidth="43.0" style="-fx-background-radius: 50%;" text="c">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0">
-                           <image>
-                              <Image url="@../../../../../../Second%20Sem/chat-application/src/main/resources/img/camera.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <VBox.margin>
-                        <Insets bottom="5.0" />
-                     </VBox.margin>
-                  </JFXButton>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="17.0" layoutY="41.0" onAction="#btnImageChooserOnAction" prefHeight="34.0" prefWidth="38.0" style="-fx-background-radius: 50%;" text="i">
-                     <graphic>
-                        <ImageView fitHeight="20.0" fitWidth="24.0">
-                           <image>
-                              <Image url="@../../../../../../Second%20Sem/chat-application/src/main/resources/img/image.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </JFXButton>
-               </children>
-            </VBox>
-            <Label alignment="CENTER" layoutX="-71.0" layoutY="15.0" opacity="0.5" prefHeight="20.0" prefWidth="68.0" style="-fx-background-color: White; -fx-background-radius: 20;" text="Camera" />
-            <Label alignment="CENTER" layoutX="-105.0" layoutY="51.0" opacity="0.5" prefHeight="20.0" prefWidth="102.0" style="-fx-background-color: White; -fx-background-radius: 20;" text="Choose Image" />
-         </children>
-      </Pane>
-      <Pane fx:id="paneImage" prefHeight="758.0" prefWidth="606.0" style="-fx-background-color: rgba(0, 0, 0, 0.7);" visible="false">
-         <children>
-            <VBox alignment="CENTER" layoutY="45.0" prefHeight="607.0" prefWidth="606.0">
-               <children>
-                  <HBox alignment="CENTER" prefHeight="609.0" prefWidth="606.0">
+                  <JFXTextField fx:id="txtField" focusColor="#405aa800" onAction="#txtFieldOnAction" prefHeight="50.0" prefWidth="486.0" promptText="   Message" style="-fx-background-color: #DAFFFB; -fx-border-color: black; -fx-border-radius: 15; -fx-background-radius: 15;" styleClass="text-field" unFocusColor="#4d4d4d00">
+                     <font>
+                        <Font name="Segoe UI Emoji" size="18.0" />
+                     </font>
+                  </JFXTextField>
+                  <Pane prefHeight="56.0" prefWidth="56.0">
                      <children>
-                        <ImageView fx:id="imgView" fitHeight="330.0" fitWidth="582.0" pickOnBounds="true" preserveRatio="true" />
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#btnImageOnAction" prefHeight="56.0" prefWidth="56.0">
+                           <graphic>
+                              <ImageView fitHeight="29.0" fitWidth="31.0">
+                                 <image>
+                                    <Image url="@../img/gallery.png" />
+                                 </image>
+                                 <effect>
+                                    <ColorAdjust brightness="-1.0" contrast="-0.22" hue="0.02" />
+                                 </effect>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Pane fx:id="paneCamImgBtns" layoutY="-90.0" prefHeight="84.0" prefWidth="49.0" style="-fx-background-color: rgba(255, 255, 255, 0.7); -fx-background-radius: 15px;" visible="false">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="1.0" prefHeight="85.0" prefWidth="47.0">
+                                 <children>
+                                    <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#btnCameraOnAction" prefHeight="2.0" prefWidth="43.0" style="-fx-background-radius: 50%;" text="c">
+                                       <graphic>
+                                          <ImageView fitHeight="24.0" fitWidth="24.0">
+                                             <image>
+                                                <Image url="@../../../../../../Second%20Sem/chat-application/src/main/resources/img/camera.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                    <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="17.0" layoutY="41.0" onAction="#btnImageChooserOnAction" prefHeight="34.0" prefWidth="38.0" style="-fx-background-radius: 50%;" text="i">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="24.0">
+                                             <image>
+                                                <Image url="@../../../../../../Second%20Sem/chat-application/src/main/resources/img/image.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                              <Label alignment="CENTER" layoutX="-71.0" layoutY="15.0" opacity="0.5" prefHeight="20.0" prefWidth="68.0" style="-fx-background-color: White; -fx-background-radius: 20;" text="Camera" />
+                              <Label alignment="CENTER" layoutX="-105.0" layoutY="51.0" opacity="0.5" prefHeight="20.0" prefWidth="102.0" style="-fx-background-color: White; -fx-background-radius: 20;" text="Choose Image" />
+                           </children>
+                        </Pane>
+                        <JFXButton fx:id="btnSend" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="-51.0" layoutY="8.0" prefHeight="34.0" prefWidth="24.0">
+                           <graphic>
+                              <ImageView>
+                                 <image>
+                                    <Image url="@../../../../../../Second%20Sem/chat-application/src/main/resources/img/paper-plane.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
                      </children>
+                  </Pane>
+                  <Pane prefHeight="56.0" prefWidth="56.0">
+                     <children>
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#btnEmojiOnAction" prefHeight="43.0" prefWidth="56.0">
+                           <graphic>
+                              <ImageView fitHeight="44.0" fitWidth="43.0">
+                                 <image>
+                                    <Image url="@../img/icons8-face-48.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Pane fx:id="paneEmojies" layoutX="-270.0" layoutY="-335.0" prefHeight="330.0" prefWidth="329.0" style="-fx-background-color: rgba(255, 255, 255, 0.5); -fx-border-color: white;" visible="false">
+                           <children>
+                              <TabPane prefHeight="330.0" prefWidth="329.0" style="-fx-background-color: rgba(255, 255, 255, 0);" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="😀">
+                                       <content>
+                                          <ScrollPane hbarPolicy="NEVER" prefHeight="282.0" prefWidth="271.0" style="-fx-background-color: tranparent;" stylesheets="@../styles/scroll-pane.css">
+                                             <content>
+                                                <FlowPane fx:id="flowPaneEmojiSet1" prefHeight="284.0" prefWidth="320.0" />
+                                             </content>
+                                          </ScrollPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="👓">
+                                       <content>
+                                          <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" stylesheets="@../styles/scroll-pane.css" vbarPolicy="NEVER">
+                                             <content>
+                                                <FlowPane fx:id="flowPaneEmojiSet2" prefHeight="284.0" prefWidth="319.0" style="-fx-background-color: transparent;" />
+                                             </content>
+                                          </ScrollPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="🌳">
+                                       <content>
+                                          <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" stylesheets="@../styles/scroll-pane.css" vbarPolicy="NEVER">
+                                             <content>
+                                                <FlowPane fx:id="flowPaneEmojiSet3" prefHeight="284.0" prefWidth="319.0" style="-fx-background-color: transparent;" />
+                                             </content>
+                                          </ScrollPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <BorderPane fx:id="paneImage" prefHeight="688.0" prefWidth="648.0" style="-fx-background-color: rgba(0, 0, 0, 0.9);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox alignment="CENTER" prefHeight="607.0" prefWidth="574.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="609.0" prefWidth="587.0">
+                     <children>
+                        <ImageView fx:id="imgView" fitHeight="459.0" fitWidth="582.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                           </HBox.margin></ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </VBox.margin>
                   </HBox>
                </children>
+               <BorderPane.margin>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </BorderPane.margin>
             </VBox>
-            <JFXButton contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="542.0" layoutY="9.0" onAction="#btnCloseOnActioin" prefHeight="52.0" prefWidth="52.0" style="-fx-background-radius: 50%;">
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="32.0">
-                     <image>
-                        <Image url="@../../../../../../Second%20Sem/chat-application/src/main/resources/img/cancel.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton fx:id="btnImageCapture" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="268.0" layoutY="652.0" onAction="#btnImageCaptureOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 50%;" visible="false">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0">
-                     <image>
-                        <Image url="@../../../../../../Second%20Sem/chat-application/src/main/resources/img/focus.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton fx:id="btnSendImg" contentDisplay="GRAPHIC_ONLY" disable="true" focusTraversable="false" layoutX="512.0" layoutY="663.0" onAction="#btnSendImgOnAction">
-               <graphic>
-                  <ImageView fitHeight="39.0" fitWidth="40.0">
-                     <image>
-                        <Image url="@../../../../../../Second%20Sem/chat-application/src/main/resources/img/paper-plane.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-         </children>
-      </Pane>
+         </center>
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="130.0" prefWidth="606.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#btnCloseOnActioin" prefHeight="52.0" prefWidth="52.0" style="-fx-background-radius: 50%;">
+                     <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="42.0">
+                           <image>
+                              <Image url="@../../../../../../Second%20Sem/chat-application/src/main/resources/img/cancel.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btnImageCapture" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#btnImageCaptureOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 50%;" visible="false">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0">
+                           <image>
+                              <Image url="@../../../../../../Second%20Sem/chat-application/src/main/resources/img/focus.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btnSendImg" contentDisplay="GRAPHIC_ONLY" disable="true" focusTraversable="false" onAction="#btnSendImgOnAction">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@../../../../../../Second%20Sem/chat-application/src/main/resources/img/paper-plane.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
    </children>
 </AnchorPane>

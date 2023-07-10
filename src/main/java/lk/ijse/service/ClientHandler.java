@@ -27,8 +27,8 @@ public class ClientHandler implements Runnable{
     public ClientHandler(Socket socket){
         try {
             this.socket = socket;
-            bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF8"));
-            bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF8"));
+            bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF16"));
+            bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF16"));
             bos = new BufferedOutputStream(socket.getOutputStream());
 
             userName = bufferedReader.readLine();

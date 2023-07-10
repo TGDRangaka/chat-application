@@ -7,7 +7,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,8 +31,7 @@ public class LoginFormController implements Initializable {
 
         try {
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/chat_form.fxml"));
-            root.getChildren().setAll((Node)fxmlLoader.load());
+            ((Stage) root.getScene().getWindow()).setScene(new Scene(new FXMLLoader().load(getClass().getResource("/view/chat_form.fxml"))));
 
         } catch (IOException e) {
             e.printStackTrace();

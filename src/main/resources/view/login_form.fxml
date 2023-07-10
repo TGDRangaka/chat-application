@@ -8,27 +8,30 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" focusTraversable="true" prefHeight="758.0" prefWidth="606.0" style="-fx-background-color: silver;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.LoginFormController">
+<AnchorPane fx:id="root" focusTraversable="true" prefHeight="758.0" prefWidth="606.0" style="-fx-background-color: linear-gradient(to bottom, #11998e, #38ef7d);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.LoginFormController">
    <children>
       <Label layoutX="237.0" layoutY="70.0" text="Login">
          <font>
             <Font name="System Bold" size="50.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtUserName" layoutX="173.0" layoutY="410.0" prefHeight="44.0" prefWidth="327.0" style="-fx-background-color: white; -fx-background-radius: 15px;" unFocusColor="#4d4d4d00" />
-      <JFXTextField focusTraversable="false" layoutX="173.0" layoutY="513.0" prefHeight="44.0" prefWidth="327.0" style="-fx-background-color: white; -fx-background-radius: 15px;" unFocusColor="#4d4d4d00" />
+      <JFXTextField fx:id="txtUserName" layoutX="173.0" layoutY="410.0" prefHeight="44.0" prefWidth="327.0" style="-fx-background-color: lightgreen; -fx-background-radius: 15px;" unFocusColor="#4d4d4d00" />
+      <JFXTextField focusTraversable="false" layoutX="173.0" layoutY="513.0" prefHeight="44.0" prefWidth="327.0" style="-fx-background-color: white; -fx-background-radius: 15px;" unFocusColor="#4d4d4d00" visible="false" />
       <Label layoutX="173.0" layoutY="390.0" text="User Name" />
-      <Label layoutX="178.0" layoutY="493.0" text="Password" />
+      <Label layoutX="178.0" layoutY="493.0" text="Password" visible="false" />
       <ImageView layoutX="132.0" layoutY="417.0">
          <image>
             <Image url="@../img/user.png" />
          </image>
       </ImageView>
-      <ImageView layoutX="135.0" layoutY="523.0">
+      <ImageView layoutX="135.0" layoutY="523.0" visible="false">
          <image>
             <Image url="@../img/icons8-key-24.png" />
          </image>
       </ImageView>
-      <JFXButton focusTraversable="false" layoutX="415.0" layoutY="592.0" onAction="#btnGoToChatOnAction" style="-fx-background-color: lightgreen; -fx-background-radius: 15; -fx-border-color: black; -fx-border-radius: 15;" text="Go to chat" />
+      <JFXButton focusTraversable="false" layoutX="216.0" layoutY="597.0" onAction="#btnGoToChatOnAction" prefHeight="58.0" prefWidth="175.0" style="-fx-background-color: lightgreen; -fx-background-radius: 15; -fx-border-color: black; -fx-border-radius: 15;" text="Go to chat">
+         <font>
+            <Font name="Arial Bold" size="25.0" />
+         </font></JFXButton>
    </children>
 </AnchorPane>

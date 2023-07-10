@@ -16,11 +16,8 @@ public class CreateLoginFormController {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/login_form.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-
         Stage stage = new Stage();
         stage.setTitle("Login");
-        stage.centerOnScreen();
-        stage.setResizable(false);
         stage.setScene(scene);
 
         stage.show();
