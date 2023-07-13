@@ -1,37 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" focusTraversable="true" prefHeight="758.0" prefWidth="606.0" style="-fx-background-color: linear-gradient(to bottom, #11998e, #38ef7d);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.LoginFormController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="758.0" prefWidth="606.0" style="-fx-background-color: linear-gradient(to bottom, #11998e, #38ef7d);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.LoginFormController">
    <children>
-      <Label layoutX="237.0" layoutY="70.0" text="Login">
-         <font>
-            <Font name="System Bold" size="50.0" />
-         </font>
-      </Label>
-      <JFXTextField fx:id="txtUserName" layoutX="173.0" layoutY="410.0" prefHeight="44.0" prefWidth="327.0" style="-fx-background-color: lightgreen; -fx-background-radius: 15px;" unFocusColor="#4d4d4d00" />
-      <JFXTextField focusTraversable="false" layoutX="173.0" layoutY="513.0" prefHeight="44.0" prefWidth="327.0" style="-fx-background-color: white; -fx-background-radius: 15px;" unFocusColor="#4d4d4d00" visible="false" />
-      <Label layoutX="173.0" layoutY="390.0" text="User Name" />
-      <Label layoutX="178.0" layoutY="493.0" text="Password" visible="false" />
-      <ImageView layoutX="132.0" layoutY="417.0">
-         <image>
-            <Image url="@../img/user.png" />
-         </image>
-      </ImageView>
-      <ImageView layoutX="135.0" layoutY="523.0" visible="false">
-         <image>
-            <Image url="@../img/icons8-key-24.png" />
-         </image>
-      </ImageView>
-      <JFXButton focusTraversable="false" layoutX="216.0" layoutY="597.0" onAction="#btnGoToChatOnAction" prefHeight="58.0" prefWidth="175.0" style="-fx-background-color: lightgreen; -fx-background-radius: 15; -fx-border-color: black; -fx-border-radius: 15;" text="Go to chat">
-         <font>
-            <Font name="Arial Bold" size="25.0" />
-         </font></JFXButton>
+      <GridPane layoutX="204.0" layoutY="306.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="865.0" prefWidth="753.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <AnchorPane focusTraversable="true" prefHeight="758.0" prefWidth="606.0" style="-fx-background-color: linear-gradient(to bottom, #11998e, #38ef7d);">
+                           <children>
+                              <Label fx:id="lblLogin" layoutX="249.0" layoutY="307.0" text="Login">
+                                 <font>
+                                    <Font name="Calibri" size="50.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="txtUserName" layoutX="140.0" layoutY="413.0" prefHeight="44.0" prefWidth="327.0" style="-fx-background-color: lightgreen; -fx-background-radius: 15px;" unFocusColor="#4d4d4d00" />
+                              <JFXTextField fx:id="textPassword" focusTraversable="false" layoutX="140.0" layoutY="489.0" prefHeight="44.0" prefWidth="327.0" style="-fx-background-color: lightgreen; -fx-background-radius: 15px;" unFocusColor="#4d4d4d00" />
+                              <Label layoutX="140.0" layoutY="393.0" text="User Name" />
+                              <Label layoutX="145.0" layoutY="469.0" text="Password" />
+                              <ImageView layoutX="102.0" layoutY="420.0">
+                                 <image>
+                                    <Image url="@../img/user.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView layoutX="105.0" layoutY="499.0">
+                                 <image>
+                                    <Image url="@../img/icons8-key-24.png" />
+                                 </image>
+                              </ImageView>
+                              <JFXButton fx:id="btn" focusTraversable="false" layoutX="188.0" layoutY="582.0" onAction="#btnGoToChatOnAction" prefHeight="58.0" prefWidth="230.0" style="-fx-background-color: lightgreen; -fx-background-radius: 15; -fx-border-color: black; -fx-border-radius: 15;" text="Go To Chat">
+                                 <font>
+                                    <Font name="Arial Bold" size="25.0" />
+                                 </font>
+                              </JFXButton>
+                              <ImageView fitHeight="114.0" fitWidth="507.0" layoutX="50.0" layoutY="65.0">
+                                 <image>
+                                    <Image url="@../img/gecko-low-resolution-logo-color-on-transparent-background.png" />
+                                 </image>
+                              </ImageView>
+                              <HBox alignment="CENTER" layoutX="140.0" layoutY="647.0" prefHeight="30.0" prefWidth="327.0">
+                                 <children>
+                                    <Label text="Don't have a account." />
+                                    <Label fx:id="lblCreateAcc" onMouseClicked="#lblCreateAccOnMoueClicked" prefHeight="20.0" prefWidth="109.0" text=" Create a acount." textFill="#3317ff" underline="true">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <JFXTextArea fx:id="lblDescription" editable="false" focusColor="#405aa800" layoutX="172.0" layoutY="307.0" prefHeight="58.0" prefWidth="264.0" text="Please enter a username and a password to create the account." unFocusColor="#4d4d4d00" visible="false" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
    </children>
 </AnchorPane>

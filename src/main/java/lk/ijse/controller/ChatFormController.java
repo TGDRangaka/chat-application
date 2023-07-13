@@ -69,6 +69,7 @@ public class ChatFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         userName = LoginFormController.userName;
+
         new Thread(() -> {
             try{
                 socket = new Socket("localhost", 1234);
@@ -402,6 +403,7 @@ public class ChatFormController implements Initializable {
     void txtFieldOnAction(ActionEvent event) {
         String message = txtField.getText();
         if (message.isBlank()){
+            new Alert(Alert.AlertType.WARNING, "There is no message to send!").show();
             return;
         }
 

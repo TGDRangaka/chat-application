@@ -22,9 +22,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane focusTraversable="true" prefHeight="758.0" prefWidth="606.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ChatFormController">
+<AnchorPane focusTraversable="true" prefHeight="758.0" prefWidth="606.0" style="-fx-background-color: #2B2730;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ChatFormController">
    <children>
-      <GridPane layoutX="43.0" layoutY="65.0" style="-fx-background-color: lightblue;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <GridPane layoutX="43.0" layoutY="65.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
@@ -61,7 +61,7 @@
                                     <Image url="@../img/gallery.png" />
                                  </image>
                                  <effect>
-                                    <ColorAdjust brightness="-1.0" contrast="-0.22" hue="0.02" />
+                                    <ColorAdjust brightness="1.0" contrast="-0.22" hue="0.02" />
                                  </effect>
                               </ImageView>
                            </graphic>
