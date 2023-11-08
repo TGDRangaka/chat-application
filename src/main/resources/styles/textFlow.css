@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'OpenSansEmoji';
+    src: url("OpenSansEmoji.ttf");
+}
+
+.text-flow {
+    -fx-background-color: #a6c4ff;
+    -fx-background-radius: 5px 20px 20px 20px;
+    -fx-font-family: OpenSansEmoji;
+    -fx-font-size: 16px;
+}
